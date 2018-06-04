@@ -13,6 +13,8 @@ var enemy = {
   weapon: {type: "covfefe", damage: 1}
 };
 
+var result = '';
+var inventoryObject = {};
 
 // Game logic
 function rest(creature) {
@@ -81,6 +83,17 @@ function displayStats(){
 document.getElementById("display").innerHTML="Hero name " + hero.name + ". His health is " + hero.health + ". He carries a " + hero.weapon.type + " which inflicts " + hero.weapon.damage + " points damage.";
 };
 
+function changeHero(){
+  hero.name = document.getElementById("heroName").value;
+  document.getElementById("heroOutput").innerHTML = ('Your hero is now ' + hero.name)
+};
+
+function displayInventory(){
+    hero.inventory.forEach(function(inventoryObject){
+      console.log(hero.inventory[]); 
+    })
+    console.log(result);
+}
 
 function updateStats(){
   displayStats()
@@ -91,3 +104,4 @@ function updateStats(){
 
 
 displayStats();
+displayInventory();
